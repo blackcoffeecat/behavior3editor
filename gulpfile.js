@@ -9,7 +9,7 @@ var less          = require('gulp-less');
 var jshint        = require('gulp-jshint');
 var foreach       = require("gulp-foreach");
 var zip           = require("gulp-zip");
-var packager      = require('electron-packager');
+// var packager      = require('electron-packager');
 var templateCache = require('gulp-angular-templatecache');
 var replace       = require('gulp-replace');
 var stylish       = require('jshint-stylish');
@@ -214,7 +214,7 @@ gulp.task('_watch', ['_livereload'], function() {
 
 // TASKS (NODE WEBKIT) ========================================================
 gulp.task('_electron', ['build'], function(cb) {
-  packager({
+  require('electron-packager')({
     dir       : 'build',
     out       : '.temp-dist',
     name      : project.name,

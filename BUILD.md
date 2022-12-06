@@ -49,4 +49,12 @@ Just run:
     gulp dist
 
 
+## Build for mac arm64
 
+    # 用 nodejs v8 打包静态文件
+    nvm use 8
+    gulp build
+    # 用 nodejs v14 编译electron
+    nvm use 14
+    cd build
+    electron-builder --mac
